@@ -38,9 +38,3 @@ int main(){
     converting();
     return 0;
 }
-
-
-int main(){
-    perevod();
-    return 0;
-}
