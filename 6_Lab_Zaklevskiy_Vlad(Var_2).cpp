@@ -1,33 +1,31 @@
 #include <iostream>
 using namespace std;
 
-//Функция для перевода числа с 10 системы в систему m (m<10)
-void perevod(){
+//Function for converting a number from system 10 to system m (m <10)
+void converting(){
     int m, chislo, ostacha;
-    setlocale(LC_ALL, "Russian");
-    cout << "Введите основу системы исчисления m(m<0): ";
+    cout << "Enter the base m(m<0): ";
     cin >> m;
-    cout <<endl<< "Введите число: ";
+    cout <<endl<< "Enter the number: ";
     cin >> chislo;
 
     int index = 1;
     int size = 1;
     int *arrayOfNumbers = new int [size];
-
-
-    //Проверка на корректность системы исчисления
+    
+    //Checking the correctness of the number system
     if (m == 2 || m == 8) {
         do {
-            ostacha = chislo % m;//Находим остачу от деления числа на основу m
-            //cout << ostacha;//Вывод цифры
-            arrayOfNumbers[index]=ostacha;
-            chislo /= m;//Делим число на основу системы m
+            ostacha = chislo % m;//Find the remainder of dividing the number by the base m
+            //cout << ostacha;
+            arrayOfNumbers[-index]=ostacha;
+            chislo /= m;
             index++;
             size++;
-            if (chislo <= m)cout << chislo, size++;//Если число меньше или равно основе, выводим это число
-        } while (chislo >= m);//Выполняем цикл пока число больше или равно основе
+            if (chislo <= m)arrayOfNumbers[-index]=ostacha, size++;
+        } while (chislo >= m);//Loop while the number is greater than or equal to the base
 
-    } else cout<<"Некорректный ввод(Доступны только системы исчисления с основой 2 или 8)";
+    } else cout<<"Incorrect entry (Only calculus systems with base 2 or 8 are available)";
 
     for(int i=0;i <= size; i++){
         cout << arrayOfNumbers[i];
@@ -36,7 +34,10 @@ void perevod(){
     delete [] arrayOfNumbers;
 }
 
-
+int main(){
+    converting();
+    return 0;
+}
 
 
 int main(){
