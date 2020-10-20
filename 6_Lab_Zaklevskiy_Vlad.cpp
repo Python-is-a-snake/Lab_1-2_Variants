@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int main(){
+void conv(){
     int num, sys, num2=0, i;
     cout << "Enter the number: ";
     cin >> num;
@@ -18,5 +18,9 @@ int main(){
     }
     else
         cout << "Incorrect enter :(";
+}
+
+int main(){
+    conv();
     return 0;
 }
