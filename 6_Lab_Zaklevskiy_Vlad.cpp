@@ -2,22 +2,21 @@
 using namespace std;
 
 int main(){
-    setlocale (LC_ALL, "Russian");
     int num, sys, num2=0, i;
-    cout << "Введите число: ";
+    cout << "Enter the number: ";
     cin >> num;
-    cout << "Введите систему счисления(2 или 8): ";
+    cout << "Enter the base (2 or 8): ";
     cin >> sys;
     if (sys == 2 || sys == 8) {
         for(i = 0; num >= sys-1; i++)
         {
-            num2 += (num%sys)*pow(10, i);//Находим число
+            num2 += (num%sys)*pow(10, i);//Calculating the number
             num /= sys;
         }
         num2 += num*pow(10, i++);
-        cout << "Число в этой системе счисления: " <<num2 << endl;//Вывод числа на экран
+        cout << "The number in base: " <<num2 << endl;
     }
     else
-        cout << "Некорректный ввод";
+        cout << "Incorrect enter :(";
     return 0;
 }
